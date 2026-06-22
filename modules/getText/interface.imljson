@@ -1,0 +1,1 @@
+[ { "name": "sessionId", "type": "text" }, { "name": "text", "type": "text" }, { "name": "length", "type": "number" }, { "name": "truncated", "type": "boolean" } ]

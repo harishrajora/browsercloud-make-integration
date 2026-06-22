@@ -1,0 +1,1 @@
+[ { "name": "sessionId", "type": "text" }, { "name": "snapshot", "type": "text" }, { "name": "elements", "type": "array" } ]

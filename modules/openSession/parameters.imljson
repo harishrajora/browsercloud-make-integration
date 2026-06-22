@@ -1,0 +1,6 @@
+[
+  { "name": "browser",        "type": "select",  "label": "Browser",         "default": "Chrome",      "//": "static (user sets; AI-decide OFF). TODO: options" },
+  { "name": "platform",       "type": "select",  "label": "Platform",        "default": "Windows 11",  "//": "static. TODO: options" },
+  { "name": "browserVersion", "type": "select",  "label": "Browser Version", "default": "latest",      "//": "static. TODO: options" },
+  { "name": "sessionName",    "type": "text",    "label": "Session Name",    "required": false,        "//": "optional; AI may fill" }
+]

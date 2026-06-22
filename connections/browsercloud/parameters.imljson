@@ -1,0 +1,28 @@
+[
+  {
+    "name": "username",
+    "type": "text",
+    "label": "Username",
+    "required": true,
+    "help": "Your TestMu AI username (find it in your account profile)."
+  },
+  {
+    "name": "accessKey",
+    "type": "password",
+    "label": "Access Key",
+    "required": true,
+    "help": "Your TestMu AI access key (find it in your account profile)."
+  },
+  {
+    "name": "region",
+    "type": "select",
+    "label": "Region",
+    "required": true,
+    "default": "us",
+    "help": "TestMu cloud region. Decides the hub host for all browser sessions.",
+    "options": [
+      { "label": "US", "value": "us" },
+      { "label": "EU", "value": "eu" }
+    ]
+  }
+]

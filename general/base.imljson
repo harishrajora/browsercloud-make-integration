@@ -1,0 +1,18 @@
+{
+  "//": "BASE — shared request config inherited by every module. SKELETON (refine during build).",
+  "//baseUrl": "Hub host is chosen by the connection's region (us -> hub, eu -> eu-hub).",
+  "baseUrl": "https://{{if(connection.region = 'eu'; 'eu-hub'; 'hub')}}.lambdatest.com/wd/hub",
+  "headers": {
+    "Authorization": "Basic {{base64(connection.username + ':' + connection.accessKey)}}",
+    "Content-Type": "application/json"
+  },
+  "response": {
+    "//": "TODO: W3C WebDriver error handling. On error the hub returns body.value.error/message.",
+    "error": {
+      "message": "[{{statusCode}}] {{ifempty(body.value.message; 'WebDriver request failed')}}"
+    }
+  },
+  "log": {
+    "sanitize": ["request.headers.authorization"]
+  }
+}

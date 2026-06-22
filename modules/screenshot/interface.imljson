@@ -1,0 +1,1 @@
+[ { "name": "sessionId", "type": "text" }, { "name": "image", "type": "text" }, { "name": "fullPage", "type": "boolean" }, { "name": "fullPageRequested", "type": "boolean" } ]

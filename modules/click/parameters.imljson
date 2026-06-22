@@ -1,0 +1,4 @@
+[
+  { "name": "sessionId", "type": "text",   "label": "Session ID", "required": true, "//": "AI fills" },
+  { "name": "ref",       "type": "number", "label": "Ref",        "required": true, "//": "AI fills; ref number from latest snapshot" }
+]

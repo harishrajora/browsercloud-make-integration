@@ -1,0 +1,111 @@
+{
+  "fileVersion": 1,
+  "//": "Make local-development manifest. Reconciled with the remote app when linked via the Make Apps VS Code extension ('Local development for Apps'). 'origins' is filled in then.",
+  "generalCodeFiles": {
+    "base": "general/base.imljson",
+    "readme": "README.md"
+  },
+  "components": {
+    "connection": {
+      "browsercloud": {
+        "label": "TestMu AI Browser Cloud",
+        "connectionType": "basic",
+        "codeFiles": {
+          "communication": "connections/browsercloud/api.imljson",
+          "params": "connections/browsercloud/parameters.imljson"
+        }
+      }
+    },
+    "module": {
+      "openSession": {
+        "label": "Open Browser Session",
+        "description": "Start a new cloud browser session. Call this first; returns a sessionId you must pass to every other tool.",
+        "moduleType": "action",
+        "connection": "browsercloud",
+        "codeFiles": {
+          "communication": "modules/openSession/api.imljson",
+          "mappableParams": "modules/openSession/parameters.imljson",
+          "interface": "modules/openSession/interface.imljson"
+        }
+      },
+      "navigate": {
+        "label": "Navigate",
+        "description": "Open a URL in the session. Requires sessionId. Returns a fresh snapshot of interactive elements.",
+        "moduleType": "action",
+        "connection": "browsercloud",
+        "codeFiles": {
+          "communication": "modules/navigate/api.imljson",
+          "mappableParams": "modules/navigate/parameters.imljson",
+          "interface": "modules/navigate/interface.imljson"
+        }
+      },
+      "snapshot": {
+        "label": "Snapshot Page",
+        "description": "Return a numbered list of interactive elements on the current page. Requires sessionId.",
+        "moduleType": "action",
+        "connection": "browsercloud",
+        "codeFiles": {
+          "communication": "modules/snapshot/api.imljson",
+          "mappableParams": "modules/snapshot/parameters.imljson",
+          "interface": "modules/snapshot/interface.imljson"
+        }
+      },
+      "click": {
+        "label": "Click Element",
+        "description": "Click an element by its ref number from the latest snapshot. Requires sessionId.",
+        "moduleType": "action",
+        "connection": "browsercloud",
+        "codeFiles": {
+          "communication": "modules/click/api.imljson",
+          "mappableParams": "modules/click/parameters.imljson",
+          "interface": "modules/click/interface.imljson"
+        }
+      },
+      "type": {
+        "label": "Type Text",
+        "description": "Type text into an input element by ref. Optionally press Enter. Requires sessionId.",
+        "moduleType": "action",
+        "connection": "browsercloud",
+        "codeFiles": {
+          "communication": "modules/type/api.imljson",
+          "mappableParams": "modules/type/parameters.imljson",
+          "interface": "modules/type/interface.imljson"
+        }
+      },
+      "getText": {
+        "label": "Get Text",
+        "description": "Read text from a specific ref, or the whole page when ref is omitted. Requires sessionId.",
+        "moduleType": "action",
+        "connection": "browsercloud",
+        "codeFiles": {
+          "communication": "modules/getText/api.imljson",
+          "mappableParams": "modules/getText/parameters.imljson",
+          "interface": "modules/getText/interface.imljson"
+        }
+      },
+      "screenshot": {
+        "label": "Screenshot",
+        "description": "Capture a base64 PNG of the current viewport (for vision models). Requires sessionId.",
+        "moduleType": "action",
+        "connection": "browsercloud",
+        "codeFiles": {
+          "communication": "modules/screenshot/api.imljson",
+          "mappableParams": "modules/screenshot/parameters.imljson",
+          "interface": "modules/screenshot/interface.imljson"
+        }
+      },
+      "release": {
+        "label": "Release Session",
+        "description": "End the cloud browser session. Call this when the goal is achieved to stop billing for idle time. Requires sessionId.",
+        "moduleType": "action",
+        "connection": "browsercloud",
+        "codeFiles": {
+          "communication": "modules/release/api.imljson",
+          "mappableParams": "modules/release/parameters.imljson",
+          "interface": "modules/release/interface.imljson"
+        }
+      }
+    }
+  },
+  "origins": []
+}

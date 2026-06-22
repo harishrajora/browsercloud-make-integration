@@ -1,0 +1,8 @@
+{
+  "//": "SKELETON — communication NOT implemented yet.",
+  "//endpoint": "POST /session/{{parameters.sessionId}}/url  ->  POST /execute/sync (snapshot)",
+  "//spec": "See README -> Module spec for 'navigate'. Build request/response here.",
+  "url": "TODO",
+  "method": "TODO",
+  "response": { "output": { "//": "TODO: map outputs (see interface.imljson)" } }
+}

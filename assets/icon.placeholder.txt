@@ -1,0 +1,2 @@
+Add the app icon here as icon.png (512x512 PNG, TestMu AI Browser Cloud logo).
+Reference: n8n-nodes-testmuai/nodes/_shared/testmuai_logo.png

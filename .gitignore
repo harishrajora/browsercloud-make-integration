@@ -1,0 +1,8 @@
+node_modules/
+.DS_Store
+*.log
+.env
+# Make local-dev secrets / machine-local origin files (never commit credentials)
+.secrets
+*.local.json
+secret*.imljson

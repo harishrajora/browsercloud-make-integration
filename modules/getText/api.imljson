@@ -1,0 +1,8 @@
+{
+  "//": "SKELETON — communication NOT implemented yet.",
+  "//endpoint": "POST /session/{{parameters.sessionId}}/execute/sync (GETTEXT_SCRIPT)",
+  "//spec": "See README -> Module spec for 'getText'. Build request/response here.",
+  "url": "TODO",
+  "method": "TODO",
+  "response": { "output": { "//": "TODO: map outputs (see interface.imljson)" } }
+}

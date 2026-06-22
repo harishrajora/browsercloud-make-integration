@@ -1,0 +1,1 @@
+[ { "name": "sessionId", "type": "text" }, { "name": "dashboardUrl", "type": "url" }, { "name": "browser", "type": "text" }, { "name": "platform", "type": "text" }, { "name": "version", "type": "text" } ]

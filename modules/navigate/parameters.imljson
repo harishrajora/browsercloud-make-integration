@@ -1,0 +1,4 @@
+[
+  { "name": "sessionId", "type": "text", "label": "Session ID", "required": true, "//": "AI fills from Open Browser Session output" },
+  { "name": "url",       "type": "url",  "label": "URL",        "required": true, "//": "AI fills" }
+]

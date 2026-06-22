@@ -1,0 +1,18 @@
+{
+  "//": "CONNECTION validation — runs on the 'Verify' button. SKELETON (refine during build).",
+  "//note": "Lightweight authenticated call to confirm the username/access key are valid.",
+  "url": "https://api.lambdatest.com/automation/api/v1/sessions",
+  "method": "GET",
+  "qs": { "limit": 1 },
+  "headers": {
+    "Authorization": "Basic {{base64(parameters.username + ':' + parameters.accessKey)}}"
+  },
+  "response": {
+    "error": {
+      "message": "Invalid TestMu AI credentials ({{statusCode}})"
+    }
+  },
+  "log": {
+    "sanitize": ["request.headers.authorization"]
+  }
+}

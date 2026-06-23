@@ -1,8 +1,33 @@
 {
-  "//": "SKELETON — communication NOT implemented yet.",
-  "//endpoint": "POST /session",
-  "//spec": "See README -> Module spec for 'openSession'. Build request/response here.",
-  "url": "TODO",
-  "method": "TODO",
-  "response": { "output": { "//": "TODO: map outputs (see interface.imljson)" } }
+  "url": "/session",
+  "method": "POST",
+  "body": {
+    "capabilities": {
+      "alwaysMatch": {
+        "browserName": "{{parameters.browser}}",
+        "platformName": "{{parameters.platform}}",
+        "browserVersion": "{{parameters.browserVersion}}",
+        "LT:Options": {
+          "username": "{{connection.username}}",
+          "accessKey": "{{connection.accessKey}}",
+          "build": "make-testmuai",
+          "name": "{{ifempty(parameters.sessionName; 'make-testmuai session')}}",
+          "video": true,
+          "console": true
+        }
+      }
+    }
+  },
+  "response": {
+    "output": {
+      "sessionId": "{{body.value.sessionId}}",
+      "dashboardUrl": "https://automation.lambdatest.com/test?testID={{body.value.sessionId}}",
+      "browser": "{{parameters.browser}}",
+      "platform": "{{parameters.platform}}",
+      "version": "{{parameters.browserVersion}}"
+    },
+    "error": {
+      "message": "Failed to open session: {{ifempty(body.value.message; 'TestMu cloud did not return a session ID')}}"
+    }
+  }
 }

@@ -1,8 +1,16 @@
 {
-  "//": "SKELETON — communication NOT implemented yet.",
-  "//endpoint": "POST /session/{{parameters.sessionId}}/execute/sync (GETTEXT_SCRIPT)",
-  "//spec": "See README -> Module spec for 'getText'. Build request/response here.",
-  "url": "TODO",
-  "method": "TODO",
-  "response": { "output": { "//": "TODO: map outputs (see interface.imljson)" } }
+  "url": "/session/{{parameters.sessionId}}/execute/sync",
+  "method": "POST",
+  "body": {
+    "script": "var r=parseInt(arguments[0],10)||0;var m=parseInt(arguments[1],10)||4000;var el=(r>0)?document.querySelector('[data-ref=\"'+r+'\"]'):document.body;var s=((el&&el.innerText)||'').replace(/\\s+/g,' ').trim();return{text:s.slice(0,m),length:s.length,truncated:s.length>m};",
+    "args": ["{{parameters.ref}}", "{{parameters.maxLength}}"]
+  },
+  "response": {
+    "output": {
+      "sessionId": "{{parameters.sessionId}}",
+      "text": "{{body.value.text}}",
+      "length": "{{body.value.length}}",
+      "truncated": "{{body.value.truncated}}"
+    }
+  }
 }

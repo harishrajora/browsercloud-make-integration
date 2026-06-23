@@ -1,8 +1,10 @@
 {
-  "//": "SKELETON — communication NOT implemented yet.",
-  "//endpoint": "DELETE /session/{{parameters.sessionId}}",
-  "//spec": "See README -> Module spec for 'release'. Build request/response here.",
-  "url": "TODO",
-  "method": "TODO",
-  "response": { "output": { "//": "TODO: map outputs (see interface.imljson)" } }
+  "url": "/session/{{parameters.sessionId}}",
+  "method": "DELETE",
+  "response": {
+    "output": {
+      "sessionId": "{{parameters.sessionId}}",
+      "released": true
+    }
+  }
 }

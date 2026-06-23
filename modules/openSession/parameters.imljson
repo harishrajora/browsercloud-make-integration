@@ -1,6 +1,55 @@
 [
-  { "name": "browser",        "type": "select",  "label": "Browser",         "default": "Chrome",      "//": "static (user sets; AI-decide OFF). TODO: options" },
-  { "name": "platform",       "type": "select",  "label": "Platform",        "default": "Windows 11",  "//": "static. TODO: options" },
-  { "name": "browserVersion", "type": "select",  "label": "Browser Version", "default": "latest",      "//": "static. TODO: options" },
-  { "name": "sessionName",    "type": "text",    "label": "Session Name",    "required": false,        "//": "optional; AI may fill" }
+  {
+    "name": "browser",
+    "type": "select",
+    "label": "Browser",
+    "required": true,
+    "default": "Chrome",
+    "help": "Browser the cloud session uses. Set once when wiring the tool (AI-decide OFF).",
+    "options": [
+      { "label": "Chrome", "value": "Chrome" },
+      { "label": "Firefox", "value": "Firefox" },
+      { "label": "Microsoft Edge", "value": "MicrosoftEdge" },
+      { "label": "Safari", "value": "Safari" }
+    ]
+  },
+  {
+    "name": "platform",
+    "type": "select",
+    "label": "Platform",
+    "required": true,
+    "default": "Windows 11",
+    "help": "Operating system for the cloud session. Pick one compatible with the browser.",
+    "options": [
+      { "label": "Windows 11", "value": "Windows 11" },
+      { "label": "Windows 10", "value": "Windows 10" },
+      { "label": "macOS Sonoma", "value": "macOS Sonoma" },
+      { "label": "macOS Ventura", "value": "macOS Ventura" },
+      { "label": "macOS Monterey", "value": "macOS Monterey" },
+      { "label": "Linux", "value": "Linux" }
+    ]
+  },
+  {
+    "name": "browserVersion",
+    "type": "select",
+    "label": "Browser Version",
+    "required": true,
+    "default": "latest",
+    "help": "\"latest\" tracks the newest stable release; \"latest-1\" is one major version behind.",
+    "options": [
+      { "label": "Latest", "value": "latest" },
+      { "label": "Latest - 1", "value": "latest-1" },
+      { "label": "Latest - 2", "value": "latest-2" },
+      { "label": "Latest - 3", "value": "latest-3" },
+      { "label": "Beta", "value": "beta" },
+      { "label": "Dev", "value": "dev" }
+    ]
+  },
+  {
+    "name": "sessionName",
+    "type": "text",
+    "label": "Session Name",
+    "required": false,
+    "help": "Optional label shown on the TestMu dashboard. The AI may fill this from the task."
+  }
 ]

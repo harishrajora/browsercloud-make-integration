@@ -1,8 +1,27 @@
-{
-  "//": "SKELETON — communication NOT implemented yet.",
-  "//endpoint": "POST /session/{{parameters.sessionId}}/execute/sync (CLICK_SCRIPT + snapshot)",
-  "//spec": "See README -> Module spec for 'click'. Build request/response here.",
-  "url": "TODO",
-  "method": "TODO",
-  "response": { "output": { "//": "TODO: map outputs (see interface.imljson)" } }
-}
+[
+  {
+    "url": "/session/{{parameters.sessionId}}/execute/sync",
+    "method": "POST",
+    "body": {
+      "script": "var r=arguments[0];var el=document.querySelector('[data-ref=\"'+r+'\"]');if(!el)throw new Error('No element with ref '+r+'; run Snapshot to refresh.');el.scrollIntoView({block:'center'});el.click();return{ref:r};",
+      "args": ["{{parameters.ref}}"]
+    },
+    "response": { "temp": { "clicked": "{{body.value}}" } }
+  },
+  {
+    "url": "/session/{{parameters.sessionId}}/execute/sync",
+    "method": "POST",
+    "body": {
+      "script": "var S='a,button,input,textarea,select,[role=button],[role=link],[role=tab],[role=menuitem],[role=checkbox],[role=radio],[tabindex=\"0\"]';document.querySelectorAll('[data-ref]').forEach(function(e){e.removeAttribute('data-ref');});var out=[],n=1,els=document.querySelectorAll(S);for(var i=0;i<els.length;i++){var el=els[i];var tag=el.tagName.toLowerCase();var it=(el.getAttribute('type')||'').toLowerCase();var dis=('disabled' in el&&el.disabled)||el.getAttribute('aria-disabled')==='true';var hid=el.getAttribute('aria-hidden')==='true'||el.hidden||(tag==='input'&&it==='hidden');if(dis||hid)continue;var r=el.getBoundingClientRect();if(r.width<=0||r.height<=0)continue;var cx=r.left+r.width/2,cy=r.top+r.height/2;if(cy>=0&&cy<window.innerHeight&&cx>=0&&cx<window.innerWidth){var t=document.elementFromPoint(cx,cy);if(t&&!(t===el||el.contains(t)||t.contains(el)))continue;}var ro='readOnly' in el&&el.readOnly;var role=(el.getAttribute('role')||tag)+(ro?' (readonly)':'');var text=(el.innerText||el.value||el.placeholder||el.getAttribute('aria-label')||el.getAttribute('title')||'').replace(/\\s+/g,' ').trim().slice(0,120);var ref=n++;el.setAttribute('data-ref',String(ref));out.push({ref:ref,tag:tag,role:role,text:text});}return{elements:out,text:out.map(function(o){return o.ref+'. <'+o.tag+'> ['+o.role+'] '+o.text;}).join(String.fromCharCode(10))};",
+      "args": []
+    },
+    "response": {
+      "output": {
+        "sessionId": "{{parameters.sessionId}}",
+        "clicked": "{{temp.clicked}}",
+        "snapshot": "{{body.value.text}}",
+        "elements": "{{body.value.elements}}"
+      }
+    }
+  }
+]

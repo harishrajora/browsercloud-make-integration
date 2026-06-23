@@ -18,11 +18,11 @@
     "type": "select",
     "label": "Region",
     "required": true,
-    "default": "us",
+    "default": "hub",
     "help": "TestMu cloud region. Decides the hub host for all browser sessions.",
     "options": [
-      { "label": "US", "value": "us" },
-      { "label": "EU", "value": "eu" }
+      { "label": "US", "value": "hub" },
+      { "label": "EU", "value": "eu-hub" }
     ]
   }
 ]

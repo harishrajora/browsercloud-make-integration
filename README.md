@@ -10,9 +10,9 @@ cloud, visible on the dashboard with video, console, and network capture.
 
 ## Status
 
-🟡 **Skeleton.** Structure, manifest, connection, base, and module stubs are in place.
-Request/response logic (`*/api.imljson`) and the injected browser scripts (`scripts/*.js`) are
-**not implemented yet** — every file marked `TODO`.
+🟢 **Core implemented.** Connection, base, all 8 module request/response mappings, and the four
+injected browser scripts are written and validated as well-formed JSON. Remaining before publishing:
+add the app icon, link to a Make app and test live with an AI Agent, then submit for verification.
 
 ## Architecture (decided)
 
@@ -77,16 +77,19 @@ You drive a real cloud browser via the TestMu AI Browser Cloud tools.
 Never reuse refs from earlier turns — refs are only valid against the latest snapshot.
 ```
 
-## Build checklist (next phase)
+## Build checklist
 
-- [ ] Implement `connections/browsercloud/api.imljson` verify call
-- [ ] Implement `general/base.imljson` error handling
-- [ ] Port `scripts/snapshot.js` from the n8n `SNAPSHOT_SCRIPT` (return `{elements, text}`)
-- [ ] Implement `scripts/click.js`, `scripts/type.js`, `scripts/getText.js`
-- [ ] Implement each `modules/*/api.imljson` (request + response mapping)
-- [ ] Fill `select` options (browser, platform, browserVersion)
+- [x] Implement `connections/browsercloud/api.imljson` verify call
+- [x] Implement `general/base.imljson` error handling
+- [x] Port `scripts/snapshot.js` from the n8n `SNAPSHOT_SCRIPT` (return `{elements, text}`)
+- [x] Implement `scripts/click.js`, `scripts/type.js`, `scripts/getText.js`
+- [x] Implement each `modules/*/api.imljson` (request + response mapping)
+- [x] Fill `select` options (browser, platform, browserVersion)
 - [ ] Add `assets/icon.png`
+- [ ] Link folder to a Make app (Make Apps VS Code extension) and push
 - [ ] Test locally with a Make AI Agent (OpenAI/Claude/Gemini)
+- [ ] v1.1: native-WebDriver action path for sites needing real input events
+- [ ] v1.1: treat `Release` of an already-gone session (404) as success
 - [ ] Submit for Make app verification → Marketplace listing
 
 ## Connecting this repo to Make

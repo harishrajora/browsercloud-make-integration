@@ -1,0 +1,9 @@
+{
+  "sessionId": "1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d",
+  "clicked": { "ref": 3 },
+  "snapshot": "1. <a> [link] Back\n2. <h1> [heading] Article title",
+  "elements": [
+    { "ref": 1, "tag": "a", "role": "link", "text": "Back" },
+    { "ref": 2, "tag": "h1", "role": "heading", "text": "Article title" }
+  ]
+}

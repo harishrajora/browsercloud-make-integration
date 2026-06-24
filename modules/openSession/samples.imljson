@@ -1,0 +1,7 @@
+{
+  "sessionId": "1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d",
+  "dashboardUrl": "https://automation.lambdatest.com/test?testID=1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d",
+  "browser": "Chrome",
+  "platform": "Windows 11",
+  "version": "latest"
+}

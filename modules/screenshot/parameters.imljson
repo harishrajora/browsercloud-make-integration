@@ -1,3 +1,4 @@
 [
-  { "name": "sessionId", "type": "text", "label": "Session ID", "required": true, "//": "AI fills" }
+  { "name": "sessionId", "type": "text", "label": "Session ID", "required": true,
+    "help": "The session ID returned by 'Open Browser Session'. Reuse the SAME sessionId for every step of this browsing task." }
 ]

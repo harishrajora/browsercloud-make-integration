@@ -1,5 +1,8 @@
 [
-  { "name": "sessionId", "type": "text",   "label": "Session ID", "required": true,  "//": "AI fills" },
-  { "name": "ref",       "type": "number", "label": "Ref",        "required": false, "//": "AI fills; 0/empty = whole page" },
-  { "name": "maxLength", "type": "number", "label": "Max Length", "default": 4000,   "//": "static (user sets)" }
+  { "name": "sessionId", "type": "text", "label": "Session ID", "required": true,
+    "help": "The session ID returned by 'Open Browser Session'. Reuse the SAME sessionId for every step of this browsing task." },
+  { "name": "ref", "type": "number", "label": "Ref", "required": false,
+    "help": "Optional. The ref of one specific element to read. Leave as 0 (or empty) to read the entire page's visible text." },
+  { "name": "maxLength", "type": "number", "label": "Max Length", "default": 4000,
+    "help": "Maximum number of characters to return. Longer text is truncated (the 'truncated' output flag tells you when this happened)." }
 ]

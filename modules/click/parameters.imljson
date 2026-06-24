@@ -1,4 +1,6 @@
 [
-  { "name": "sessionId", "type": "text",   "label": "Session ID", "required": true, "//": "AI fills" },
-  { "name": "ref",       "type": "number", "label": "Ref",        "required": true, "//": "AI fills; ref number from latest snapshot" }
+  { "name": "sessionId", "type": "text", "label": "Session ID", "required": true,
+    "help": "The session ID returned by 'Open Browser Session'. Reuse the SAME sessionId for every step of this browsing task." },
+  { "name": "ref", "type": "number", "label": "Ref", "required": true,
+    "help": "The ref number of the element to click, taken from the numbered list in the most recent snapshot. Refs are only valid against the latest snapshot — never reuse refs from an earlier turn." }
 ]

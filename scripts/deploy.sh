@@ -75,6 +75,9 @@ PY
       "$name" "$label" "$desc" "$CONN" > /tmp/_mod.json
     curl -s -o /dev/null -w "module create $name [%{http_code}]\n" -X POST "${AUTH[@]}" "${JS[@]}" --data-binary @/tmp/_mod.json "$API/apps/$APP/$VER/modules"
   fi
+  # keep label + description in sync on every deploy (idempotent)
+  python3 -c "import json,sys;print(json.dumps({'label':sys.argv[1],'description':sys.argv[2]}))" "$label" "$desc" > /tmp/_modmeta.json
+  curl -s -o /dev/null -w "module/$name meta [%{http_code}]\n" -X PATCH "${AUTH[@]}" "${JS[@]}" --data-binary @/tmp/_modmeta.json "$API/apps/$APP/$VER/modules/$name"
   put "$REPO_DIR/modules/$name/api.imljson"        "$API/apps/$APP/$VER/modules/$name/api"       "module/$name api"
   put "$REPO_DIR/modules/$name/parameters.imljson" "$API/apps/$APP/$VER/modules/$name/expect"    "module/$name expect"
   put "$REPO_DIR/modules/$name/interface.imljson"  "$API/apps/$APP/$VER/modules/$name/interface" "module/$name iface"

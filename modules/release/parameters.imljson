@@ -1,3 +1,4 @@
 [
-  { "name": "sessionId", "type": "text", "label": "Session ID", "required": true, "//": "AI fills" }
+  { "name": "sessionId", "type": "text", "label": "Session ID", "required": true,
+    "help": "The session ID to end, returned by 'Open Browser Session'. Call this once the task is complete to free the cloud browser and stop billing." }
 ]

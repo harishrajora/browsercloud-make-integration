@@ -1,6 +1,10 @@
 [
-  { "name": "sessionId",  "type": "text",    "label": "Session ID",  "required": true,  "//": "AI fills" },
-  { "name": "ref",        "type": "number",  "label": "Ref",         "required": true,  "//": "AI fills" },
-  { "name": "text",       "type": "text",    "label": "Text",        "required": true,  "//": "AI fills" },
-  { "name": "pressEnter", "type": "boolean", "label": "Press Enter", "default": false,  "//": "AI fills" }
+  { "name": "sessionId", "type": "text", "label": "Session ID", "required": true,
+    "help": "The session ID returned by 'Open Browser Session'. Reuse the SAME sessionId for every step of this browsing task." },
+  { "name": "ref", "type": "number", "label": "Ref", "required": true,
+    "help": "The ref number of the input element to type into, from the most recent snapshot. Refs are only valid against the latest snapshot." },
+  { "name": "text", "type": "text", "label": "Text", "required": true,
+    "help": "The text to type into the element. Any existing value is replaced." },
+  { "name": "pressEnter", "type": "boolean", "label": "Press Enter", "default": false,
+    "help": "Set to true to press Enter after typing — e.g. to submit a search box or form." }
 ]

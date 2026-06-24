@@ -19,7 +19,7 @@
     "module": {
       "openSession": {
         "label": "Open Browser Session",
-        "description": "Start a new cloud browser session. Call this first; returns a sessionId you must pass to every other tool.",
+        "description": "Start a new cloud browser session on TestMu Browser Cloud. ALWAYS call this first in a browsing task. Returns a sessionId that every other browser tool requires — keep it and pass the same value to each subsequent call.",
         "moduleType": "action",
         "connection": "browsercloud",
         "codeFiles": {
@@ -30,7 +30,7 @@
       },
       "navigate": {
         "label": "Navigate",
-        "description": "Open a URL in the session. Requires sessionId. Returns a fresh snapshot of interactive elements.",
+        "description": "Open a URL in the cloud browser and return a fresh numbered snapshot of the page's interactive elements. Requires the sessionId from Open Browser Session.",
         "moduleType": "action",
         "connection": "browsercloud",
         "codeFiles": {
@@ -41,7 +41,7 @@
       },
       "snapshot": {
         "label": "Snapshot Page",
-        "description": "Return a numbered list of interactive elements on the current page. Requires sessionId.",
+        "description": "Return a fresh numbered list of the interactive elements (links, buttons, inputs) on the current page. Use these ref numbers to click or type. Requires sessionId.",
         "moduleType": "action",
         "connection": "browsercloud",
         "codeFiles": {
@@ -52,7 +52,7 @@
       },
       "click": {
         "label": "Click Element",
-        "description": "Click an element by its ref number from the latest snapshot. Requires sessionId.",
+        "description": "Click an element by its ref number from the most recent snapshot. Returns an updated snapshot of the resulting page. Requires sessionId.",
         "moduleType": "action",
         "connection": "browsercloud",
         "codeFiles": {
@@ -63,7 +63,7 @@
       },
       "type": {
         "label": "Type Text",
-        "description": "Type text into an input element by ref. Optionally press Enter. Requires sessionId.",
+        "description": "Type text into an input element by its ref number from the most recent snapshot, optionally pressing Enter to submit. Returns an updated snapshot. Requires sessionId.",
         "moduleType": "action",
         "connection": "browsercloud",
         "codeFiles": {
@@ -74,7 +74,7 @@
       },
       "getText": {
         "label": "Get Text",
-        "description": "Read text from a specific ref, or the whole page when ref is omitted. Requires sessionId.",
+        "description": "Read visible text from the page — the whole page (ref 0 or empty) or a single element by ref. Use this to extract content. Requires sessionId.",
         "moduleType": "action",
         "connection": "browsercloud",
         "codeFiles": {
@@ -85,7 +85,7 @@
       },
       "screenshot": {
         "label": "Screenshot",
-        "description": "Capture a base64 PNG of the current viewport (for vision models). Requires sessionId.",
+        "description": "Capture a PNG screenshot (base64) of the current viewport, useful for vision models. Requires sessionId.",
         "moduleType": "action",
         "connection": "browsercloud",
         "codeFiles": {
@@ -96,7 +96,7 @@
       },
       "release": {
         "label": "Release Session",
-        "description": "End the cloud browser session. Call this when the goal is achieved to stop billing for idle time. Requires sessionId.",
+        "description": "End the cloud browser session to free resources and stop billing. ALWAYS call this when the task is complete. Requires sessionId.",
         "moduleType": "action",
         "connection": "browsercloud",
         "codeFiles": {

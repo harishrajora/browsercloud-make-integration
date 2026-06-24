@@ -2,7 +2,7 @@
 	"url": "/session/{{parameters.sessionId}}",
 	"method": "DELETE",
 	"response": {
-		"valid": "{{statusCode < 500}}",
+		"valid": "{{statusCode < 400 || statusCode == 404}}",
 		"output": {
 			"sessionId": "{{parameters.sessionId}}",
 			"released": true

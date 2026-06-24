@@ -85,12 +85,22 @@ Never reuse refs from earlier turns — refs are only valid against the latest s
 - [x] Implement `scripts/click.js`, `scripts/type.js`, `scripts/getText.js`
 - [x] Implement each `modules/*/api.imljson` (request + response mapping)
 - [x] Fill `select` options (browser, platform, browserVersion)
-- [ ] Add `assets/icon.png`
-- [ ] Link folder to a Make app (Make Apps VS Code extension) and push
-- [ ] Test locally with a Make AI Agent (OpenAI/Claude/Gemini)
+- [x] Add `assets/icon.png`
+- [x] Deploy to Make app (via `bash scripts/deploy.sh` — Make API, reproducible)
+- [x] Treat `Release` of an already-gone session (404) as success
+- [x] Validate modules in a manual scenario (Open → Navigate → Get Text → Release)
+- [ ] Hi-res icon (current is 75×85 upscaled) + exact brand theme hex
+- [ ] Module samples; broaden `countries`
 - [ ] v1.1: native-WebDriver action path for sites needing real input events
-- [ ] v1.1: treat `Release` of an already-gone session (404) as success
-- [ ] Submit for Make app verification → Marketplace listing
+- [ ] Agent usage: submit for verification (module-tools) or build scenario-tools (interim)
+
+## Deploying
+
+```bash
+bash scripts/deploy.sh        # pushes base + connection + all 8 modules + icon to Make
+```
+Reads the API token/zone from the Make Apps Editor's VS Code settings, or override with
+`MAKE_API_KEY=… MAKE_ZONE=eu1 MAKE_APP=… bash scripts/deploy.sh`.
 
 ## Connecting this repo to Make
 

@@ -1,18 +1,15 @@
 {
-  "//": "BASE — shared request config inherited by every module.",
-  "//baseUrl": "Region value is the hub subdomain ('hub' for US, 'eu-hub' for EU), so no conditional is needed.",
-  "baseUrl": "https://{{connection.region}}.lambdatest.com/wd/hub",
-  "headers": {
-    "Authorization": "Basic {{base64(connection.username + ':' + connection.accessKey)}}",
-    "Content-Type": "application/json"
-  },
-  "response": {
-    "//": "W3C WebDriver returns errors as body.value.error / body.value.message.",
-    "error": {
-      "message": "[{{statusCode}}] {{ifempty(body.value.message; 'WebDriver request failed')}}"
-    }
-  },
-  "log": {
-    "sanitize": ["request.headers.authorization"]
-  }
+	"baseUrl": "https://{{connection.region}}.lambdatest.com/wd/hub",
+	"headers": {
+		"Authorization": "Basic {{base64(connection.username + ':' + connection.accessKey)}}",
+		"Content-Type": "application/json"
+	},
+	"response": {
+		"error": {
+			"message": "[{{statusCode}}] {{ifempty(body.value.message; 'WebDriver request failed')}}"
+		}
+	},
+	"log": {
+		"sanitize": ["request.headers.authorization"]
+	}
 }

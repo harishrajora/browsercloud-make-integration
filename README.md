@@ -92,9 +92,10 @@ Never reuse refs from earlier turns — refs are only valid against the latest s
 - [x] Hi-res 512×512 icon
 - [x] Enriched tool + field descriptions for agent reliability
 - [x] Screenshot also returns a binary file (`data`/`fileName`) alongside base64
+- [x] Unique session names (Session Name input + timestamp)
+- [x] Module samples for all 8 modules
+- [x] Broaden `countries` (no restriction)
 - [ ] Exact brand theme hex (currently #000000)
-- [ ] Unique session names (`{{now}}`) on the dashboard
-- [ ] Module samples; broaden `countries`
 - [ ] v1.1: native-WebDriver action path for sites needing real input events
 - [ ] Agent usage: submit for verification (module-tools) or build scenario-tools (interim)
 

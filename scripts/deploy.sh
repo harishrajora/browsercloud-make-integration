@@ -81,6 +81,9 @@ PY
   put "$REPO_DIR/modules/$name/api.imljson"        "$API/apps/$APP/$VER/modules/$name/api"       "module/$name api"
   put "$REPO_DIR/modules/$name/parameters.imljson" "$API/apps/$APP/$VER/modules/$name/expect"    "module/$name expect"
   put "$REPO_DIR/modules/$name/interface.imljson"  "$API/apps/$APP/$VER/modules/$name/interface" "module/$name iface"
+  if [ -f "$REPO_DIR/modules/$name/samples.imljson" ]; then
+    put "$REPO_DIR/modules/$name/samples.imljson"  "$API/apps/$APP/$VER/modules/$name/samples"  "module/$name samples"
+  fi
 done
 
 # --- optional: icon + theme (only if present) -------------------------------

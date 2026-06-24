@@ -19,7 +19,7 @@
     "module": {
       "openSession": {
         "label": "Open Browser Session",
-        "description": "Start a new cloud browser session on TestMu Browser Cloud. ALWAYS call this first in a browsing task. Returns a sessionId that every other browser tool requires — keep it and pass the same value to each subsequent call.",
+        "description": "Start a new cloud browser session on TestMu AI Browser Cloud. ALWAYS call this first in a browsing task. Returns a sessionId that every other browser tool requires — keep it and pass the same value to each subsequent call.",
         "moduleType": "action",
         "connection": "browsercloud",
         "codeFiles": {

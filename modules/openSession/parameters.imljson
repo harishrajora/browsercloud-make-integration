@@ -50,6 +50,6 @@
     "type": "text",
     "label": "Session Name",
     "required": false,
-    "help": "A label for this session shown on the TestMu dashboard — e.g. your scenario or task name. A timestamp is appended automatically so each run is unique. Defaults to \"TestMu Browser Cloud\" if left empty."
+    "help": "A label for this session shown on the TestMu dashboard — e.g. your scenario or task name. A timestamp is appended automatically so each run is unique. Defaults to \"TestMu AI Browser Cloud\" if left empty."
   }
 ]

@@ -11,7 +11,7 @@
           "username": "{{connection.username}}",
           "accessKey": "{{connection.accessKey}}",
           "build": "make-testmuai",
-          "name": "{{ifempty(parameters.sessionName; 'TestMu Browser Cloud')}} - {{now}}",
+          "name": "{{ifempty(parameters.sessionName; 'TestMu AI Browser Cloud')}} - {{now}}",
           "video": true,
           "console": true
         }

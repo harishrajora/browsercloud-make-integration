@@ -89,7 +89,11 @@ Never reuse refs from earlier turns — refs are only valid against the latest s
 - [x] Deploy to Make app (via `bash scripts/deploy.sh` — Make API, reproducible)
 - [x] Treat `Release` of an already-gone session (404) as success
 - [x] Validate modules in a manual scenario (Open → Navigate → Get Text → Release)
-- [ ] Hi-res icon (current is 75×85 upscaled) + exact brand theme hex
+- [x] Hi-res 512×512 icon
+- [x] Enriched tool + field descriptions for agent reliability
+- [x] Screenshot also returns a binary file (`data`/`fileName`) alongside base64
+- [ ] Exact brand theme hex (currently #000000)
+- [ ] Unique session names (`{{now}}`) on the dashboard
 - [ ] Module samples; broaden `countries`
 - [ ] v1.1: native-WebDriver action path for sites needing real input events
 - [ ] Agent usage: submit for verification (module-tools) or build scenario-tools (interim)

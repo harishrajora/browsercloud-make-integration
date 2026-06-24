@@ -1,1 +1,7 @@
-[ { "name": "sessionId", "type": "text" }, { "name": "image", "type": "text" }, { "name": "fullPage", "type": "boolean" }, { "name": "fullPageRequested", "type": "boolean" } ]
+[
+  { "name": "sessionId", "type": "text" },
+  { "name": "fileName", "type": "filename", "semantic": "file:name" },
+  { "name": "data", "type": "buffer", "semantic": "file:data" },
+  { "name": "image", "type": "text" },
+  { "name": "fullPage", "type": "boolean" }
+]

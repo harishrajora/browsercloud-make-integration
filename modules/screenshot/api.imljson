@@ -4,9 +4,10 @@
   "response": {
     "output": {
       "sessionId": "{{parameters.sessionId}}",
+      "fileName": "screenshot.png",
+      "data": "{{toBinary(body.value; 'base64')}}",
       "image": "{{body.value}}",
-      "fullPage": false,
-      "fullPageRequested": false
+      "fullPage": false
     }
   }
 }

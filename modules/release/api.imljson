@@ -1,10 +1,11 @@
 {
-  "url": "/session/{{parameters.sessionId}}",
-  "method": "DELETE",
-  "response": {
-    "output": {
-      "sessionId": "{{parameters.sessionId}}",
-      "released": true
-    }
-  }
+	"url": "/session/{{parameters.sessionId}}",
+	"method": "DELETE",
+	"response": {
+		"valid": "{{statusCode < 500}}",
+		"output": {
+			"sessionId": "{{parameters.sessionId}}",
+			"released": true
+		}
+	}
 }

@@ -1,8 +1,8 @@
 {
   "sessionId": "1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d",
-  "snapshot": "1. <a> [link] Hacker News\n2. <input> [textbox] Search\n3. <button> [button] Submit",
+  "snapshot": "1. <a> [link] Home\n2. <input> [textbox] Search\n3. <button> [button] Submit",
   "elements": [
-    { "ref": 1, "tag": "a", "role": "link", "text": "Hacker News" },
+    { "ref": 1, "tag": "a", "role": "link", "text": "Home" },
     { "ref": 2, "tag": "input", "role": "textbox", "text": "Search" },
     { "ref": 3, "tag": "button", "role": "button", "text": "Submit" }
   ]

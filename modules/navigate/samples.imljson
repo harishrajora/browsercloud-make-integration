@@ -1,10 +1,11 @@
 {
   "sessionId": "1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d",
-  "url": "https://news.ycombinator.com",
-  "snapshot": "1. <a> [link] Hacker News\n2. <a> [link] new\n3. <input> [textbox] Search",
+  "url": "https://example.com",
+  "snapshot": "1. <a> [link] Home\n2. <a> [link] About\n3. <input> [textbox] Search\n4. <button> [button] Sign in",
   "elements": [
-    { "ref": 1, "tag": "a", "role": "link", "text": "Hacker News" },
-    { "ref": 2, "tag": "a", "role": "link", "text": "new" },
-    { "ref": 3, "tag": "input", "role": "textbox", "text": "Search" }
+    { "ref": 1, "tag": "a", "role": "link", "text": "Home" },
+    { "ref": 2, "tag": "a", "role": "link", "text": "About" },
+    { "ref": 3, "tag": "input", "role": "textbox", "text": "Search" },
+    { "ref": 4, "tag": "button", "role": "button", "text": "Sign in" }
   ]
 }
